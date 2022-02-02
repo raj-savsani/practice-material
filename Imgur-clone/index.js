@@ -146,10 +146,10 @@ window.addEventListener("scroll", function () {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight > scrollHeight - 100) {
     if (!once) {
+      page++;
+      console.log("page:", page);
+      getImg();
       once = setTimeout(() => {
-        page++;
-        console.log("page:", page);
-        getImg();
         once = null;
       }, 3000);
     }
